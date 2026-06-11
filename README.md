@@ -8,4 +8,4 @@ While centralized scheduling tools are common, they often require participants
 to surrender their private calendar data to a central server. As highlighted in
 research on distributed scheduling (e.g., Chao et al.), a decentralized approach
 is more flexible and privacy-preserving, as it allows agents to represent human
-users and negotiate through structured communication rather than shared data
+users and negotiate through structured communication rather than shared data.

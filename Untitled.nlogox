@@ -14,7 +14,7 @@ globals [
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; AGENT VARIABLES
-;; Each turtle represents one meeting participant.
+;; Each turtle shows one meeting participant.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 turtles-own [
@@ -26,8 +26,8 @@ turtles-own [
 ]
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; SETUP FROM USER INPUT
-;; Creates agents dynamically based on Interface inputs.
+;; SETUP 
+;; read inputs from interface and create agents.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 to setup-from-input
@@ -94,7 +94,7 @@ end
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; MESSAGE SENDING
-;; Builds a structured message and appends it to the receiver's mailbox.
+;; build and deliver a message and appends it to the receiver's mailbox.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 to send-message [sender-id receiver-id performative content conv-id]
@@ -116,8 +116,8 @@ to send-message [sender-id receiver-id performative content conv-id]
 end
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; MAILBOX INSPECTION
-;; Checks whether an agent has pending messages.
+;; MAILBOX
+;;check if mailbox is non-empty
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 to-report has-messages? [agent]
@@ -128,7 +128,7 @@ end
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FIFO MESSAGE RECEIVING
-;; Retrieves and removes the first message from an agent's mailbox.
+;; get oldest message and remove it from mailbox
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 to-report receive-first-message [agent]
@@ -149,7 +149,7 @@ end
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; MESSAGE PROCESSING
-;; Processes propose, accept, and reject messages.
+;; handle incoming message based on its performative,Processes propose, accept, and reject messages.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 to process-message [msg]
